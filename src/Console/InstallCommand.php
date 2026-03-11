@@ -13,6 +13,7 @@ class InstallCommand extends Command
 
     public function handle(): int
     {
+        $this->registerPlugin();
         $this->installCss();
         $this->publishErrorViews();
         $this->runMigrations();
@@ -22,6 +23,59 @@ class InstallCommand extends Command
         $this->info('Run `npm run build` to compile the theme.');
 
         return self::SUCCESS;
+    }
+
+    protected function registerPlugin(): void
+    {
+        $providerPath = app_path('Providers/Filament/AdminPanelProvider.php');
+
+        if (! File::exists($providerPath)) {
+            $this->warn('AdminPanelProvider not found, skipping plugin registration.');
+
+            return;
+        }
+
+        $contents = File::get($providerPath);
+
+        if (str_contains($contents, 'FilaCraftPlugin')) {
+            $this->info('FilaCraftPlugin already registered in AdminPanelProvider.');
+
+            return;
+        }
+
+        // Add use statement
+        $useStatement = 'use Slym7\\FilaCraft\\FilaCraftPlugin;';
+
+        if (preg_match('/^(namespace .+?;\n)/ms', $contents, $m, PREG_OFFSET_STRING)) {
+            $insertPos = $m[0][1] + strlen($m[0][0]);
+            // Find the last use statement to insert after it
+            if (preg_match_all('/^use .+?;\n/ms', substr($contents, $insertPos), $uses, PREG_OFFSET_STRING)) {
+                $lastUse = end($uses[0]);
+                $afterLastUse = $insertPos + $lastUse[1] + strlen($lastUse[0]);
+                $contents = substr($contents, 0, $afterLastUse) . $useStatement . "\n" . substr($contents, $afterLastUse);
+            }
+        }
+
+        // Add plugin to panel - find ->plugins([...]) or add after ->authMiddleware([...])
+        if (preg_match('/->plugins\(\[/', $contents)) {
+            // plugins() already exists, add to it
+            $contents = preg_replace(
+                '/(->plugins\(\[)/',
+                "$1\n                FilaCraftPlugin::make(),",
+                $contents
+            );
+        } else {
+            // Add ->plugins() after ->authMiddleware([...])
+            $contents = preg_replace(
+                '/(->authMiddleware\(\[\s*[^]]*?\]\s*\))/',
+                "$1\n            ->plugins([\n                FilaCraftPlugin::make(),\n            ])",
+                $contents
+            );
+        }
+
+        File::put($providerPath, $contents);
+
+        $this->info('FilaCraftPlugin registered in AdminPanelProvider.');
     }
 
     protected function installCss(): void
