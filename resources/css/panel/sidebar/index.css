@@ -23,8 +23,10 @@
 }
 
 .fi-sidebar-item.fi-active .fi-sidebar-item-label,
-.fi-sidebar-item.fi-active .fi-sidebar-item-icon {
-    @apply text-white dark:text-white;
+.fi-sidebar-item.fi-active .fi-sidebar-item-icon,
+.fi-sidebar-item.fi-active .fi-sidebar-item-btn:hover .fi-sidebar-item-label,
+.fi-sidebar-item.fi-active .fi-sidebar-item-btn:hover .fi-sidebar-item-icon {
+    @apply text-gray-900 dark:text-white;
 }
 
 .fi-sidebar-item .fi-sidebar-item-badge-ctn .fi-badge,
