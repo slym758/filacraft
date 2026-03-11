@@ -8,6 +8,7 @@ use Filament\Panel;
 use Filament\Support\Icons\Heroicon;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\Blade;
+use Slym7\FilaCraft\Pages\Themes;
 
 class FilaCraftPlugin implements Plugin
 {
@@ -30,11 +31,15 @@ class FilaCraftPlugin implements Plugin
     {
         $panel->font('Kumbh Sans');
 
+        $panel->pages([
+            Themes::class,
+        ]);
+
         $panel->userMenuItems([
             MenuItem::make()
                 ->label('Themes')
                 ->icon(Heroicon::OutlinedPaintBrush)
-                ->url(fn () => route('filament.admin.pages.themes'))
+                ->url(fn () => Themes::getUrl())
                 ->sort(-1),
         ]);
 
