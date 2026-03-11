@@ -1,0 +1,44 @@
+/* Table Row Styles */
+
+/* Striped — alternating row backgrounds */
+[data-table-style="striped"] .fi-ta-row:nth-child(even) {
+    @apply bg-gray-50/80 dark:bg-white/[0.02];
+}
+
+[data-table-style="striped"] .fi-ta-row:nth-child(even):hover {
+    @apply bg-gray-100/80 dark:bg-white/[0.05];
+}
+
+/* Bordered — visible cell borders */
+[data-table-style="bordered"] .fi-ta-row {
+    @apply border-b border-gray-200 dark:border-gray-700;
+}
+
+[data-table-style="bordered"] .fi-ta-cell {
+    @apply border-x border-gray-200/60 dark:border-gray-700/60;
+}
+
+[data-table-style="bordered"] .fi-ta-header-cell {
+    @apply border-x border-gray-200/60 dark:border-gray-700/60;
+}
+
+[data-table-style="bordered"] .fi-ta-ctn {
+    @apply border border-gray-200 dark:border-gray-700;
+}
+
+/* Minimal — no borders, clean look */
+[data-table-style="minimal"] .fi-ta-row {
+    @apply border-b-0;
+}
+
+[data-table-style="minimal"] .fi-ta-header-cell {
+    @apply border-b-0 text-gray-400 dark:text-gray-500 uppercase text-xs tracking-wider;
+}
+
+[data-table-style="minimal"] .fi-ta-ctn {
+    @apply shadow-none border-0;
+}
+
+[data-table-style="minimal"] .fi-ta-row:hover {
+    @apply bg-gray-50/60 dark:bg-white/[0.02];
+}

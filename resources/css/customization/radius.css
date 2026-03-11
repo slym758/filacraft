@@ -1,0 +1,104 @@
+/* Border Radius Presets */
+
+/* Sharp — no rounding */
+[data-radius="sharp"] .fi-btn,
+[data-radius="sharp"] .fi-badge,
+[data-radius="sharp"] .fi-input-wrp,
+[data-radius="sharp"] .fi-section,
+[data-radius="sharp"] .fi-ta,
+[data-radius="sharp"] .fi-ta-ctn,
+[data-radius="sharp"] .fi-tabs,
+[data-radius="sharp"] .fi-tabs-item,
+[data-radius="sharp"] .fi-dropdown-panel,
+[data-radius="sharp"] .fi-dropdown-list-item,
+[data-radius="sharp"] .fi-modal-window,
+[data-radius="sharp"] .fi-no-notification,
+[data-radius="sharp"] .fi-wi-stats-overview-stat,
+[data-radius="sharp"] .fi-wi-widget,
+[data-radius="sharp"] .fi-global-search-results-ctn,
+[data-radius="sharp"] .fi-sidebar-item .fi-sidebar-item-btn,
+[data-radius="sharp"] .fi-topbar-item .fi-topbar-item-btn,
+[data-radius="sharp"] .fi-simple-main,
+[data-radius="sharp"] .fi-main-ctn,
+[data-radius="sharp"] .fi-tenant-menu-trigger,
+[data-radius="sharp"] .fi-theme-switcher-btn {
+    border-radius: 0.25rem !important;
+}
+
+[data-radius="sharp"] .fi-main-ctn {
+    border-start-start-radius: 0.25rem !important;
+}
+
+/* Small — subtle rounding */
+[data-radius="small"] .fi-btn,
+[data-radius="small"] .fi-input-wrp,
+[data-radius="small"] .fi-tabs-item,
+[data-radius="small"] .fi-dropdown-list-item,
+[data-radius="small"] .fi-sidebar-item .fi-sidebar-item-btn,
+[data-radius="small"] .fi-topbar-item .fi-topbar-item-btn,
+[data-radius="small"] .fi-tenant-menu-trigger,
+[data-radius="small"] .fi-theme-switcher-btn {
+    border-radius: 0.5rem !important;
+}
+
+[data-radius="small"] .fi-badge {
+    border-radius: 0.375rem !important;
+}
+
+[data-radius="small"] .fi-section,
+[data-radius="small"] .fi-ta,
+[data-radius="small"] .fi-tabs,
+[data-radius="small"] .fi-modal-window,
+[data-radius="small"] .fi-no-notification,
+[data-radius="small"] .fi-wi-stats-overview-stat,
+[data-radius="small"] .fi-wi-widget,
+[data-radius="small"] .fi-global-search-results-ctn,
+[data-radius="small"] .fi-simple-main,
+[data-radius="small"] .fi-dropdown-panel {
+    border-radius: 0.75rem !important;
+}
+
+[data-radius="small"] .fi-ta-ctn {
+    border-radius: 0.5rem !important;
+}
+
+[data-radius="small"] .fi-main-ctn {
+    border-start-start-radius: 0.75rem !important;
+}
+
+/* Large — extra round (default is already rounded, this goes bigger) */
+[data-radius="large"] .fi-btn,
+[data-radius="large"] .fi-input-wrp,
+[data-radius="large"] .fi-tabs-item,
+[data-radius="large"] .fi-dropdown-list-item,
+[data-radius="large"] .fi-sidebar-item .fi-sidebar-item-btn,
+[data-radius="large"] .fi-topbar-item .fi-topbar-item-btn,
+[data-radius="large"] .fi-tenant-menu-trigger,
+[data-radius="large"] .fi-theme-switcher-btn {
+    border-radius: 9999px !important;
+}
+
+[data-radius="large"] .fi-badge {
+    border-radius: 9999px !important;
+}
+
+[data-radius="large"] .fi-section,
+[data-radius="large"] .fi-ta,
+[data-radius="large"] .fi-tabs,
+[data-radius="large"] .fi-modal-window,
+[data-radius="large"] .fi-no-notification,
+[data-radius="large"] .fi-wi-stats-overview-stat,
+[data-radius="large"] .fi-wi-widget,
+[data-radius="large"] .fi-global-search-results-ctn,
+[data-radius="large"] .fi-simple-main,
+[data-radius="large"] .fi-dropdown-panel {
+    border-radius: 2rem !important;
+}
+
+[data-radius="large"] .fi-ta-ctn {
+    border-radius: 1.5rem !important;
+}
+
+[data-radius="large"] .fi-main-ctn {
+    border-start-start-radius: 3rem !important;
+}

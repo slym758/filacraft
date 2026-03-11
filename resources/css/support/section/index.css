@@ -1,0 +1,8 @@
+.fi-section {
+    @apply rounded-3xl;
+    border: 1px solid oklch(from var(--primary-200) l c h / 0.5) !important;
+}
+
+.dark .fi-section {
+    border: 1px solid oklch(from var(--primary-400) l c h / 0.2) !important;
+}

@@ -1,0 +1,12 @@
+.fi-ta-ctn {
+    border: 1px solid oklch(from var(--primary-200) l c h / 0.5) !important;
+}
+
+.dark .fi-ta-ctn {
+    border: 1px solid oklch(from var(--primary-400) l c h / 0.2) !important;
+}
+
+.fi-ta-actions-header-cell,
+.fi-ta-empty-header-cell {
+    background-color: transparent !important;
+}
