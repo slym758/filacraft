@@ -29,25 +29,46 @@ class InstallCommand extends Command
         $themePath = resource_path('css/filament/admin/theme.css');
 
         if (! File::exists($themePath)) {
-            $this->warn('Theme file not found at: ' . $themePath);
-            $this->info('Run `php artisan make:filament-theme admin` first, then re-run this command.');
+            $this->info('Theme file not found, creating it...');
+            $this->call('make:filament-theme', ['panel' => 'admin']);
+        }
+
+        if (! File::exists($themePath)) {
+            $this->warn('Could not create theme file at: ' . $themePath);
 
             return;
         }
 
         $contents = File::get($themePath);
-        $importLine = "@import '../../../../packages/filacraft/resources/css/theme.css';";
 
-        if (str_contains($contents, $importLine)) {
+        // Detect the correct import path
+        $vendorPath = base_path('vendor/slym7/filacraft/resources/css/theme.css');
+        $localPath = base_path('packages/filacraft/resources/css/theme.css');
+
+        if (File::exists($localPath)) {
+            $importLine = "@import '../../../../packages/filacraft/resources/css/theme.css';";
+        } else {
+            $importLine = "@import '../../../../vendor/slym7/filacraft/resources/css/theme.css';";
+        }
+
+        $hasImport = str_contains($contents, 'filacraft/resources/css/theme.css');
+        $hasSource = str_contains($contents, 'filacraft/resources/views');
+
+        if ($hasImport && $hasSource) {
             $this->info('FilaCraft CSS import already exists in theme.css');
 
             return;
         }
 
-        $newContents = $importLine . "\n" . $contents;
+        // Add @source for package views (Tailwind CSS v4)
+        $sourceLine = File::exists($localPath)
+            ? "@source '../../../../packages/filacraft/resources/views/**/*';"
+            : "@source '../../../../vendor/slym7/filacraft/resources/views/**/*';";
+
+        $newContents = $importLine . "\n" . $sourceLine . "\n" . $contents;
         File::put($themePath, $newContents);
 
-        $this->info('FilaCraft CSS import added to theme.css');
+        $this->info('FilaCraft CSS import and @source added to theme.css');
     }
 
     protected function publishErrorViews(): void
