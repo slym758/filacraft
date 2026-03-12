@@ -14,15 +14,10 @@
     @apply shadow-lg;
 }
 
-[data-card-style="raised"] .fi-section:hover,
-[data-card-style="raised"] .fi-wi-stats-overview-stat:hover {
-    @apply shadow-xl;
-    transition: box-shadow 200ms ease;
-}
 
-/* Bordered — border emphasis, no shadow */
+/* Bordered — no shadow */
 [data-card-style="bordered"] .fi-section,
 [data-card-style="bordered"] .fi-ta-ctn,
 [data-card-style="bordered"] .fi-wi-stats-overview-stat {
-    @apply shadow-none border-2 border-gray-200 dark:border-gray-700;
+    @apply shadow-none;
 }

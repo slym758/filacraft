@@ -46,10 +46,10 @@ class InstallCommand extends Command
         // Add use statement
         $useStatement = 'use Slym7\\FilaCraft\\FilaCraftPlugin;';
 
-        if (preg_match('/^(namespace .+?;\n)/ms', $contents, $m, PREG_OFFSET_STRING)) {
+        if (preg_match('/^(namespace .+?;\n)/ms', $contents, $m, \PREG_OFFSET_CAPTURE)) {
             $insertPos = $m[0][1] + strlen($m[0][0]);
             // Find the last use statement to insert after it
-            if (preg_match_all('/^use .+?;\n/ms', substr($contents, $insertPos), $uses, PREG_OFFSET_STRING)) {
+            if (preg_match_all('/^use .+?;\n/ms', substr($contents, $insertPos), $uses, \PREG_OFFSET_CAPTURE)) {
                 $lastUse = end($uses[0]);
                 $afterLastUse = $insertPos + $lastUse[1] + strlen($lastUse[0]);
                 $contents = substr($contents, 0, $afterLastUse) . $useStatement . "\n" . substr($contents, $afterLastUse);

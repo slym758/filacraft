@@ -8,6 +8,7 @@ use Filament\Panel;
 use Filament\Support\Icons\Heroicon;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\Blade;
+use Slym7\FilaCraft\Http\Middleware\ApplyThemeLayout;
 use Slym7\FilaCraft\Pages\Themes;
 
 class FilaCraftPlugin implements Plugin
@@ -31,6 +32,10 @@ class FilaCraftPlugin implements Plugin
     {
         $panel->font('Kumbh Sans');
 
+        $panel->authMiddleware([
+            ApplyThemeLayout::class,
+        ]);
+
         $panel->pages([
             Themes::class,
         ]);
@@ -49,8 +54,10 @@ class FilaCraftPlugin implements Plugin
                 <script>
                     (function() {
                         var theme = localStorage.getItem("filacraft-theme");
-                        if (theme === "ege") { localStorage.setItem("filacraft-theme", "brisk"); theme = "brisk"; }
-                        if (theme && theme === "akdeniz") {
+                        var migrations = {"brisk":"ege","nord":"kutup","sunset":"gunbatimi","ege":"ege"};
+                        if (theme && migrations[theme] && migrations[theme] !== theme) { theme = migrations[theme]; localStorage.setItem("filacraft-theme", theme); }
+                        var presetThemes = ["akdeniz", "kutup", "gunbatimi", "atlas"];
+                        if (theme && presetThemes.indexOf(theme) !== -1) {
                             document.documentElement.classList.add("filacraft-" + theme);
                         }
 
