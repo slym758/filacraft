@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.hizliresim.com/8q1g53j.png" alt="FilaCraft Banner" width="100%">
+    <img src="https://i.hizliresim.com/doov7gy.png" alt="FilaCraft Banner" width="100%">
 </p>
 
 <h1 align="center">FilaCraft</h1>
