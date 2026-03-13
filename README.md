@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/atlas.png" alt="FilaCraft Banner" width="100%">
+    <img src="https://i.hizliresim.com/8q1g53j.png" alt="FilaCraft Banner" width="100%">
 </p>
 
 <h1 align="center">FilaCraft</h1>
@@ -31,33 +31,33 @@ FilaCraft ships with **5 professionally designed theme presets**, each with its 
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/ege_esintisi.png" alt="Ege Esintisi" width="100%"><br>
-      <strong>Ege Esintisi</strong><br>
-      <em>Classic sidebar layout with clean lines</em>
-    </td>
-    <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/akdeniz_ruhu.png" alt="Akdeniz Ruhu" width="100%"><br>
+      <img src="https://i.hizliresim.com/m1tef1j.png" alt="Akdeniz Ruhu" width="100%"><br>
       <strong>Akdeniz Ruhu</strong><br>
       <em>Soft pastel tones with rounded corners</em>
     </td>
-  </tr>
-  <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/kutup_ışığı.png" alt="Kutup Işığı" width="100%"><br>
-      <strong>Kutup Işığı</strong><br>
-      <em>Top navigation with frosted glass effect</em>
-    </td>
-    <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/atlas.png" alt="Atlas" width="100%"><br>
+      <img src="https://i.hizliresim.com/8q1g53j.png" alt="Atlas" width="100%"><br>
       <strong>Atlas</strong><br>
       <em>Layered surfaces with premium elevation</em>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/gün_batımı.png" alt="Gün Batımı" width="100%"><br>
+      <img src="https://i.hizliresim.com/ps69d69.png" alt="Ege Esintisi" width="100%"><br>
+      <strong>Ege Esintisi</strong><br>
+      <em>Classic sidebar layout with clean lines</em>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://i.hizliresim.com/lhtcg7t.png" alt="Gün Batımı" width="100%"><br>
       <strong>Gün Batımı</strong><br>
       <em>Warm sunset tones with expressive styling</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://i.hizliresim.com/kvd0yx9.png" alt="Kutup Işığı" width="100%"><br>
+      <strong>Kutup Işığı</strong><br>
+      <em>Top navigation with frosted glass effect</em>
     </td>
     <td align="center" width="50%">
     </td>
@@ -299,7 +299,7 @@ npm run build
 The installer auto-registers the plugin, but you can also add it manually in your `AdminPanelProvider`:
 
 ```php
-use Slym7\FilaCraft\FilaCraftPlugin;
+use Slym758\FilaCraft\FilaCraftPlugin;
 
 public function panel(Panel $panel): Panel
 {
