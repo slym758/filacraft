@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Slym7\FilaCraft\Http\Controllers\ThemeSettingsController;
+use Slym758\FilaCraft\Http\Controllers\ThemeSettingsController;
 
 Route::middleware(['web', 'auth'])->prefix('api/theme-settings')->group(function () {
     Route::get('/', [ThemeSettingsController::class, 'show']);

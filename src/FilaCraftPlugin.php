@@ -1,6 +1,6 @@
 <?php
 
-namespace Slym7\FilaCraft;
+namespace Slym758\FilaCraft;
 
 use Filament\Contracts\Plugin;
 use Filament\Navigation\MenuItem;
@@ -8,8 +8,8 @@ use Filament\Panel;
 use Filament\Support\Icons\Heroicon;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\Blade;
-use Slym7\FilaCraft\Http\Middleware\ApplyThemeLayout;
-use Slym7\FilaCraft\Pages\Themes;
+use Slym758\FilaCraft\Http\Middleware\ApplyThemeLayout;
+use Slym758\FilaCraft\Pages\Themes;
 
 class FilaCraftPlugin implements Plugin
 {

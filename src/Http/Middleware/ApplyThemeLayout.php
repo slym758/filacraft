@@ -1,11 +1,11 @@
 <?php
 
-namespace Slym7\FilaCraft\Http\Middleware;
+namespace Slym758\FilaCraft\Http\Middleware;
 
 use Closure;
 use Filament\Facades\Filament;
 use Illuminate\Http\Request;
-use Slym7\FilaCraft\Models\UserThemeSetting;
+use Slym758\FilaCraft\Models\UserThemeSetting;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApplyThemeLayout

@@ -1,6 +1,6 @@
 <?php
 
-namespace Slym7\FilaCraft\Pages;
+namespace Slym758\FilaCraft\Pages;
 
 use BackedEnum;
 use Filament\Pages\Page;

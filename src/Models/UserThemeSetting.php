@@ -1,6 +1,6 @@
 <?php
 
-namespace Slym7\FilaCraft\Models;
+namespace Slym758\FilaCraft\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
