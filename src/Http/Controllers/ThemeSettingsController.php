@@ -1,11 +1,11 @@
 <?php
 
-namespace Slym7\FilaCraft\Http\Controllers;
+namespace Slym758\FilaCraft\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Slym7\FilaCraft\Models\UserThemeSetting;
+use Slym758\FilaCraft\Models\UserThemeSetting;
 
 class ThemeSettingsController extends Controller
 {

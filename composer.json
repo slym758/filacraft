@@ -1,5 +1,5 @@
 {
-    "name": "slym7/filacraft",
+    "name": "slym758/filacraft",
     "description": "FilaCraft - A comprehensive Filament panel customization toolkit with theme presets, color palettes, fonts, density, table styles, card styles, and more.",
     "keywords": ["filament", "theme", "customization", "admin-panel", "laravel", "filacraft"],
     "license": "MIT",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Slym7\\FilaCraft\\": "src/"
+            "Slym758\\FilaCraft\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Slym7\\FilaCraft\\FilaCraftServiceProvider"
+                "Slym758\\FilaCraft\\FilaCraftServiceProvider"
             ]
         }
     },

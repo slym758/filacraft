@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/slym7/filacraft/main/resources/img/atlas.png" alt="FilaCraft Banner" width="100%">
+    <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/atlas.png" alt="FilaCraft Banner" width="100%">
 </p>
 
 <h1 align="center">FilaCraft</h1>
@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/slym7/filacraft"><img src="https://img.shields.io/packagist/v/slym7/filacraft.svg?style=flat-square" alt="Latest Version"></a>
-    <a href="https://packagist.org/packages/slym7/filacraft"><img src="https://img.shields.io/packagist/dt/slym7/filacraft.svg?style=flat-square" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/slym758/filacraft"><img src="https://img.shields.io/packagist/v/slym758/filacraft.svg?style=flat-square" alt="Latest Version"></a>
+    <a href="https://packagist.org/packages/slym758/filacraft"><img src="https://img.shields.io/packagist/dt/slym758/filacraft.svg?style=flat-square" alt="Total Downloads"></a>
     <img src="https://img.shields.io/badge/PHP-8.2%2B-blue?style=flat-square" alt="PHP 8.2+">
     <img src="https://img.shields.io/badge/Filament-4.x%20%7C%205.x-orange?style=flat-square" alt="Filament 4.x | 5.x">
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License"></a>
@@ -31,31 +31,31 @@ FilaCraft ships with **5 professionally designed theme presets**, each with its 
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym7/filacraft/main/resources/img/ege_esintisi.png" alt="Ege Esintisi" width="100%"><br>
+      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/ege_esintisi.png" alt="Ege Esintisi" width="100%"><br>
       <strong>Ege Esintisi</strong><br>
       <em>Classic sidebar layout with clean lines</em>
     </td>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym7/filacraft/main/resources/img/akdeniz_ruhu.png" alt="Akdeniz Ruhu" width="100%"><br>
+      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/akdeniz_ruhu.png" alt="Akdeniz Ruhu" width="100%"><br>
       <strong>Akdeniz Ruhu</strong><br>
       <em>Soft pastel tones with rounded corners</em>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym7/filacraft/main/resources/img/kutup_ışığı.png" alt="Kutup Işığı" width="100%"><br>
+      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/kutup_ışığı.png" alt="Kutup Işığı" width="100%"><br>
       <strong>Kutup Işığı</strong><br>
       <em>Top navigation with frosted glass effect</em>
     </td>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym7/filacraft/main/resources/img/atlas.png" alt="Atlas" width="100%"><br>
+      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/atlas.png" alt="Atlas" width="100%"><br>
       <strong>Atlas</strong><br>
       <em>Layered surfaces with premium elevation</em>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/slym7/filacraft/main/resources/img/gün_batımı.png" alt="Gün Batımı" width="100%"><br>
+      <img src="https://raw.githubusercontent.com/slym758/filacraft/main/resources/img/gün_batımı.png" alt="Gün Batımı" width="100%"><br>
       <strong>Gün Batımı</strong><br>
       <em>Warm sunset tones with expressive styling</em>
     </td>
@@ -113,7 +113,7 @@ FilaCraft ships with **5 professionally designed theme presets**, each with its 
 ### 1. Install via Composer
 
 ```bash
-composer require slym7/filacraft
+composer require slym758/filacraft
 ```
 
 ### 2. Run the installer
@@ -316,8 +316,8 @@ public function panel(Panel $panel): Panel
 Ensure your theme CSS file includes the FilaCraft import. The installer adds this automatically, but you can verify it exists in your `resources/css/filament/admin/theme.css`:
 
 ```css
-@import '/vendor/slym7/filacraft/resources/css/theme.css';
-@source '/vendor/slym7/filacraft/resources/**/*.php';
+@import '/vendor/slym758/filacraft/resources/css/theme.css';
+@source '/vendor/slym758/filacraft/resources/**/*.php';
 ```
 
 ---
