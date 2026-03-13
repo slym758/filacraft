@@ -26,216 +26,138 @@
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-1" x-text="t.themeStyle"></h2>
             <p class="text-sm text-gray-500 dark:text-gray-400 mb-4" x-text="t.themeStyleDesc"></p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="space-y-6">
                 {{-- Ege Esintisi --}}
                 <div
-                    x-on:click="selectTheme('ege')"
                     :class="currentTheme === 'ege' ? 'ring-2 ring-primary-500' : 'ring-1 ring-gray-200 dark:ring-gray-700'"
-                    class="group relative cursor-pointer rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                    class="rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200"
                 >
-                    <div class="aspect-[4/3] bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100 dark:from-gray-800 dark:via-gray-800 dark:to-gray-700 p-5 flex flex-col gap-2">
-                        <div class="flex gap-2">
-                            <div class="h-2.5 w-14 rounded-full bg-primary-400/60"></div>
-                            <div class="h-2.5 w-8 rounded-full bg-gray-300/60 dark:bg-gray-600/60"></div>
-                        </div>
-                        <div class="flex-1 rounded-3xl bg-white/70 dark:bg-gray-900/50 p-3 flex flex-col gap-2">
-                            <div class="h-1.5 w-16 rounded-full bg-gray-300 dark:bg-gray-600"></div>
-                            <div class="h-1.5 w-24 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-                            <div class="flex gap-2 mt-auto">
-                                <div class="h-5 w-12 rounded-full bg-primary-400/80"></div>
-                                <div class="h-5 w-12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+                    <div class="flex items-center justify-between px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-base font-semibold text-gray-900 dark:text-white" x-text="t.egeTitle"></h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="t.egeDesc"></span>
+                            <div x-show="currentTheme === 'ege'" x-transition class="h-5 w-5 rounded-full bg-primary-500 text-white flex items-center justify-center">
+                                <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                             </div>
                         </div>
+                        <button
+                            x-on:click="selectTheme('ege')"
+                            :class="currentTheme === 'ege' ? 'bg-primary-500 text-white' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                            class="px-4 py-1.5 rounded-lg text-sm font-medium transition-colors"
+                            x-text="currentTheme === 'ege' ? t.selected : t.select"
+                        ></button>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-gray-900 dark:text-white" x-text="t.egeTitle"></h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400" x-text="t.egeDesc"></p>
-                            </div>
-                            <div x-show="currentTheme === 'ege'" x-transition class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 text-white flex items-center justify-center">
-                                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                            </div>
+                    <div class="px-6 pb-6">
+                        <div class="rounded-xl overflow-hidden ring-1 ring-gray-200 dark:ring-gray-700">
+                            <img src="{{ asset('vendor/filacraft/img/ege_esintisi.png') }}" alt="Ege Esintisi" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
 
                 {{-- Akdeniz Ruhu --}}
                 <div
-                    x-on:click="selectTheme('akdeniz')"
                     :class="currentTheme === 'akdeniz' ? 'ring-2 ring-primary-500' : 'ring-1 ring-gray-200 dark:ring-gray-700'"
-                    class="group relative cursor-pointer rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                    class="rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200"
                 >
-                    <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 p-5 flex flex-col gap-2">
-                        <div class="flex gap-3 flex-1">
-                            <div class="w-12 rounded-lg flex flex-col gap-1.5 p-1.5 bg-primary-50">
-                                <div class="h-2 w-full rounded-md bg-primary-100"></div>
-                                <div class="h-2 w-full rounded-md bg-primary-200/60 border border-primary-200"></div>
-                                <div class="h-2 w-8 rounded-md bg-primary-100/60"></div>
-                                <div class="h-2 w-10 rounded-md bg-primary-100/60"></div>
-                            </div>
-                            <div class="flex-1 rounded-tl-2xl rounded-tr-lg rounded-b-lg bg-white dark:bg-gray-900/70 overflow-hidden flex flex-col">
-                                <div class="h-4 bg-primary-50 flex items-center px-2 gap-1 border-b border-primary-100/50">
-                                    <div class="h-1.5 w-6 rounded-full bg-primary-200"></div>
-                                    <div class="h-1.5 w-4 rounded-full bg-primary-100"></div>
-                                </div>
-                                <div class="flex-1 p-2 flex flex-col gap-1.5">
-                                    <div class="flex gap-1.5">
-                                        <div class="h-5 flex-1 rounded-md bg-gray-50 dark:bg-gray-700 border border-gray-200/50"></div>
-                                        <div class="h-5 flex-1 rounded-md bg-gray-50 dark:bg-gray-700 border border-gray-200/50"></div>
-                                    </div>
-                                    <div class="flex-1 rounded-md bg-gray-50 dark:bg-gray-700 border border-gray-200/50 p-1.5 flex flex-col gap-1">
-                                        <div class="h-1 w-12 rounded-full bg-gray-200 dark:bg-gray-600"></div>
-                                        <div class="h-1 w-20 rounded-full bg-gray-100 dark:bg-gray-700"></div>
-                                    </div>
-                                </div>
+                    <div class="flex items-center justify-between px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-base font-semibold text-gray-900 dark:text-white" x-text="t.akdenizTitle"></h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="t.akdenizDesc"></span>
+                            <div x-show="currentTheme === 'akdeniz'" x-transition class="h-5 w-5 rounded-full bg-primary-500 text-white flex items-center justify-center">
+                                <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                             </div>
                         </div>
+                        <button
+                            x-on:click="selectTheme('akdeniz')"
+                            :class="currentTheme === 'akdeniz' ? 'bg-primary-500 text-white' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                            class="px-4 py-1.5 rounded-lg text-sm font-medium transition-colors"
+                            x-text="currentTheme === 'akdeniz' ? t.selected : t.select"
+                        ></button>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-gray-900 dark:text-white" x-text="t.akdenizTitle"></h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400" x-text="t.akdenizDesc"></p>
-                            </div>
-                            <div x-show="currentTheme === 'akdeniz'" x-transition class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 text-white flex items-center justify-center">
-                                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                            </div>
+                    <div class="px-6 pb-6">
+                        <div class="rounded-xl overflow-hidden ring-1 ring-gray-200 dark:ring-gray-700">
+                            <img src="{{ asset('vendor/filacraft/img/akdeniz_ruhu.png') }}" alt="Akdeniz Ruhu" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
 
-                {{-- Nord --}}
+                {{-- Kutup Işığı --}}
                 <div
-                    x-on:click="selectTheme('kutup')"
                     :class="currentTheme === 'kutup' ? 'ring-2 ring-primary-500' : 'ring-1 ring-gray-200 dark:ring-gray-700'"
-                    class="group relative cursor-pointer rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                    class="rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200"
                 >
-                    <div class="aspect-[4/3] bg-gradient-to-br from-teal-50 via-sky-50 to-cyan-50 dark:from-gray-800 dark:to-gray-700 p-5 flex flex-col gap-2">
-                        <div class="flex gap-3 flex-1">
-                            <div class="w-12 rounded-lg flex flex-col gap-1.5 p-1.5 bg-white/60 backdrop-blur-sm">
-                                <div class="h-2 w-full rounded-md bg-teal-200/60"></div>
-                                <div class="h-2 w-full rounded-md bg-gradient-to-r from-teal-400 to-sky-400 opacity-70"></div>
-                                <div class="h-2 w-8 rounded-md bg-teal-100/60"></div>
-                                <div class="h-2 w-10 rounded-md bg-teal-100/60"></div>
-                            </div>
-                            <div class="flex-1 rounded-lg bg-white/80 overflow-hidden flex flex-col" style="background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #8fbcbb, #5e81ac) border-box; border: 1.5px solid transparent;">
-                                <div class="h-4 bg-white/60 flex items-center px-2 gap-1">
-                                    <div class="h-1.5 w-6 rounded-full bg-teal-300/60"></div>
-                                    <div class="h-1.5 w-4 rounded-full bg-sky-300/50"></div>
-                                </div>
-                                <div class="flex-1 p-2 flex flex-col gap-1.5">
-                                    <div class="flex gap-1.5">
-                                        <div class="h-5 flex-1 rounded-md bg-white border border-teal-200/50"></div>
-                                        <div class="h-5 flex-1 rounded-md bg-white border border-sky-200/50"></div>
-                                    </div>
-                                    <div class="flex-1 rounded-md bg-white p-1.5" style="background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #8fbcbb80, #5e81ac80) border-box; border: 1px solid transparent;">
-                                        <div class="h-1 w-12 rounded-full bg-teal-300/50"></div>
-                                    </div>
-                                </div>
+                    <div class="flex items-center justify-between px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-base font-semibold text-gray-900 dark:text-white" x-text="t.kutupTitle"></h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="t.kutupDesc"></span>
+                            <div x-show="currentTheme === 'kutup'" x-transition class="h-5 w-5 rounded-full bg-primary-500 text-white flex items-center justify-center">
+                                <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                             </div>
                         </div>
+                        <button
+                            x-on:click="selectTheme('kutup')"
+                            :class="currentTheme === 'kutup' ? 'bg-primary-500 text-white' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                            class="px-4 py-1.5 rounded-lg text-sm font-medium transition-colors"
+                            x-text="currentTheme === 'kutup' ? t.selected : t.select"
+                        ></button>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-gray-900 dark:text-white" x-text="t.kutupTitle"></h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400" x-text="t.kutupDesc"></p>
-                            </div>
-                            <div x-show="currentTheme === 'kutup'" x-transition class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 text-white flex items-center justify-center">
-                                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                            </div>
+                    <div class="px-6 pb-6">
+                        <div class="rounded-xl overflow-hidden ring-1 ring-gray-200 dark:ring-gray-700">
+                            <img src="{{ asset('vendor/filacraft/img/kutup_ışığı.png') }}" alt="Kutup Işığı" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
 
-                {{-- Sunset --}}
+                {{-- Gün Batımı --}}
                 <div
-                    x-on:click="selectTheme('gunbatimi')"
                     :class="currentTheme === 'gunbatimi' ? 'ring-2 ring-primary-500' : 'ring-1 ring-gray-200 dark:ring-gray-700'"
-                    class="group relative cursor-pointer rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                    class="rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200"
                 >
-                    <div class="aspect-[4/3] bg-gradient-to-br from-orange-50 via-rose-50 to-amber-50 dark:from-gray-800 dark:to-gray-700 p-5 flex flex-col gap-2">
-                        <div class="flex gap-3 flex-1">
-                            <div class="w-12 rounded-lg flex flex-col gap-1.5 p-2 bg-primary-50/80">
-                                <div class="h-2 w-full rounded-md bg-primary-100/80"></div>
-                                <div class="h-2 w-full rounded-md bg-primary-600 shadow-sm"></div>
-                                <div class="h-2 w-8 rounded-md bg-primary-100/60"></div>
-                                <div class="h-2 w-10 rounded-md bg-primary-100/60"></div>
-                            </div>
-                            <div class="flex-1 rounded-tl-2xl rounded-tr-lg rounded-b-lg bg-white shadow-md overflow-hidden flex flex-col">
-                                <div class="h-4 bg-primary-50 flex items-center px-2 gap-1">
-                                    <div class="h-1.5 w-6 rounded-full bg-primary-200"></div>
-                                </div>
-                                <div class="flex-1 p-2 flex flex-col gap-1.5">
-                                    <div class="flex gap-1.5">
-                                        <div class="h-5 flex-1 rounded-md bg-white ring-2 ring-primary-50 border border-primary-100"></div>
-                                        <div class="h-5 flex-1 rounded-md bg-white ring-2 ring-primary-50 border border-primary-100"></div>
-                                    </div>
-                                    <div class="flex-1 rounded-md bg-white ring-2 ring-primary-50 border border-primary-100 p-1.5">
-                                        <div class="h-1 w-12 rounded-full bg-gray-200"></div>
-                                    </div>
-                                </div>
+                    <div class="flex items-center justify-between px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-base font-semibold text-gray-900 dark:text-white" x-text="t.gunbatimiTitle"></h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="t.gunbatimiDesc"></span>
+                            <div x-show="currentTheme === 'gunbatimi'" x-transition class="h-5 w-5 rounded-full bg-primary-500 text-white flex items-center justify-center">
+                                <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                             </div>
                         </div>
+                        <button
+                            x-on:click="selectTheme('gunbatimi')"
+                            :class="currentTheme === 'gunbatimi' ? 'bg-primary-500 text-white' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                            class="px-4 py-1.5 rounded-lg text-sm font-medium transition-colors"
+                            x-text="currentTheme === 'gunbatimi' ? t.selected : t.select"
+                        ></button>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-gray-900 dark:text-white" x-text="t.gunbatimiTitle"></h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400" x-text="t.gunbatimiDesc"></p>
-                            </div>
-                            <div x-show="currentTheme === 'gunbatimi'" x-transition class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 text-white flex items-center justify-center">
-                                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                            </div>
+                    <div class="px-6 pb-6">
+                        <div class="rounded-xl overflow-hidden ring-1 ring-gray-200 dark:ring-gray-700">
+                            <img src="{{ asset('vendor/filacraft/img/gün_batımı.png') }}" alt="Gün Batımı" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
 
                 {{-- Atlas --}}
                 <div
-                    x-on:click="selectTheme('atlas')"
                     :class="currentTheme === 'atlas' ? 'ring-2 ring-primary-500' : 'ring-1 ring-gray-200 dark:ring-gray-700'"
-                    class="group relative cursor-pointer rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                    class="rounded-2xl bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200"
                 >
-                    <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 p-5 flex flex-col gap-2">
-                        <div class="flex gap-3 flex-1">
-                            <div class="w-12 flex flex-col gap-1 p-1.5 bg-gray-100 dark:bg-gray-800">
-                                <div class="h-0.5 w-full rounded-full bg-gradient-to-r from-primary-400 to-sky-400 mb-1"></div>
-                                <div class="h-2 w-full rounded-md bg-gray-200/80 dark:bg-gray-700/60"></div>
-                                <div class="h-2 w-full rounded-md bg-gray-50 dark:bg-gray-700/30 relative">
-                                    <div class="absolute left-0 top-0.5 w-0.5 h-1 rounded-full bg-primary-500"></div>
-                                </div>
-                                <div class="h-2 w-8 rounded-md bg-gray-200/60 dark:bg-gray-700/40"></div>
-                                <div class="h-2 w-10 rounded-md bg-gray-200/60 dark:bg-gray-700/40"></div>
-                            </div>
-                            <div class="flex-1 rounded-l-lg bg-white dark:bg-gray-900 overflow-hidden flex flex-col gap-2 p-2.5 my-0.5">
-                                <div class="flex gap-1.5">
-                                    <div class="h-5 flex-1 rounded-md bg-gray-50 dark:bg-gray-800 ring-1 ring-gray-200/50 dark:ring-gray-700/30 relative overflow-hidden">
-                                        <div class="h-0.5 w-full bg-gradient-to-r from-primary-300/40 to-sky-300/40"></div>
-                                    </div>
-                                    <div class="h-5 flex-1 rounded-md bg-gray-50 dark:bg-gray-800 ring-1 ring-gray-200/50 dark:ring-gray-700/30 relative overflow-hidden">
-                                        <div class="h-0.5 w-full bg-gradient-to-r from-primary-300/40 to-sky-300/40"></div>
-                                    </div>
-                                </div>
-                                <div class="flex-1 rounded-md bg-gray-50 dark:bg-gray-800 p-1.5">
-                                    <div class="h-full rounded bg-white dark:bg-gray-900 ring-1 ring-gray-200/50 dark:ring-gray-700/30 p-1">
-                                        <div class="h-1 w-12 rounded-full bg-gray-200 dark:bg-gray-700 mb-1"></div>
-                                        <div class="h-1 w-8 rounded-full bg-gray-100 dark:bg-gray-800"></div>
-                                    </div>
-                                </div>
+                    <div class="flex items-center justify-between px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-base font-semibold text-gray-900 dark:text-white" x-text="t.atlasTitle"></h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="t.atlasDesc"></span>
+                            <div x-show="currentTheme === 'atlas'" x-transition class="h-5 w-5 rounded-full bg-primary-500 text-white flex items-center justify-center">
+                                <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                             </div>
                         </div>
+                        <button
+                            x-on:click="selectTheme('atlas')"
+                            :class="currentTheme === 'atlas' ? 'bg-primary-500 text-white' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                            class="px-4 py-1.5 rounded-lg text-sm font-medium transition-colors"
+                            x-text="currentTheme === 'atlas' ? t.selected : t.select"
+                        ></button>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-gray-900 dark:text-white" x-text="t.atlasTitle"></h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400" x-text="t.atlasDesc"></p>
-                            </div>
-                            <div x-show="currentTheme === 'atlas'" x-transition class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 text-white flex items-center justify-center">
-                                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                            </div>
+                    <div class="px-6 pb-6">
+                        <div class="rounded-xl overflow-hidden ring-1 ring-gray-200 dark:ring-gray-700">
+                            <img src="{{ asset('vendor/filacraft/img/atlas.png') }}" alt="Atlas" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
@@ -554,6 +476,8 @@
                 themeSettingsDesc: 'Tum ayarlari varsayilana dondur',
                 resetAll: 'Tum Ayarlari Sifirla',
                 resetConfirm: 'Tum tema ayarlarini sifirlamak istediginize emin misiniz?',
+                select: 'Sec',
+                selected: 'Secili',
                 preview: 'Goster',
                 close: 'Kapat',
                 paletteLabels: {
@@ -602,6 +526,8 @@
                 themeSettingsDesc: 'Reset all settings to defaults',
                 resetAll: 'Reset All Settings',
                 resetConfirm: 'Are you sure you want to reset all theme settings?',
+                select: 'Select',
+                selected: 'Selected',
                 preview: 'Preview',
                 close: 'Close',
                 paletteLabels: {

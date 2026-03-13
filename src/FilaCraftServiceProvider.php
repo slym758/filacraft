@@ -23,5 +23,9 @@ class FilaCraftServiceProvider extends PackageServiceProvider
         $this->publishes([
             $this->package->basePath('/../resources/views/errors') => resource_path('views/errors'),
         ], "{$this->package->shortName()}-error-views");
+
+        $this->publishes([
+            $this->package->basePath('/../resources/img') => public_path('vendor/filacraft/img'),
+        ], "{$this->package->shortName()}-assets");
     }
 }
