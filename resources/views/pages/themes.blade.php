@@ -370,67 +370,6 @@
         {{-- Divider --}}
         <div class="border-t border-gray-200 dark:border-gray-700"></div>
 
-        {{-- Section: Table Row Style --}}
-        <div>
-            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-1" x-text="t.tableStyle"></h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-5" x-text="t.tableStyleDesc"></p>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
-                <template x-for="(opt, key) in tableStyleOptions" :key="key">
-                    <button
-                        x-on:click="selectTableStyle(key)"
-                        :class="currentTableStyle === key
-                            ? 'ring-2 ring-primary-500 bg-primary-50 dark:bg-primary-950/30'
-                            : 'ring-1 ring-gray-200 dark:ring-gray-700 bg-white dark:bg-gray-900 hover:ring-gray-300 dark:hover:ring-gray-600'"
-                        class="relative flex flex-col items-center gap-3 rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5"
-                    >
-                        {{-- Mini table preview --}}
-                        <div class="w-full space-y-0">
-                            <template x-for="(row, i) in [0,1,2,3]" :key="i">
-                                <div
-                                    class="flex gap-1 py-1.5 px-2"
-                                    :class="opt.rowClass(i)"
-                                >
-                                    <div class="h-1.5 w-6 rounded-full" :class="i === 0 ? 'bg-gray-400 dark:bg-gray-500' : 'bg-gray-300 dark:bg-gray-600'"></div>
-                                    <div class="h-1.5 flex-1 rounded-full" :class="i === 0 ? 'bg-gray-400 dark:bg-gray-500' : 'bg-gray-200 dark:bg-gray-700'"></div>
-                                    <div class="h-1.5 w-4 rounded-full" :class="i === 0 ? 'bg-gray-400 dark:bg-gray-500' : 'bg-gray-200 dark:bg-gray-700'"></div>
-                                </div>
-                            </template>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700 dark:text-gray-300" x-text="t.tableStyleLabels[key]"></span>
-                    </button>
-                </template>
-            </div>
-        </div>
-
-        {{-- Divider --}}
-        <div class="border-t border-gray-200 dark:border-gray-700"></div>
-
-        {{-- Section: Card/Section Style --}}
-        <div>
-            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-1" x-text="t.cardStyle"></h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-5" x-text="t.cardStyleDesc"></p>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
-                <template x-for="(opt, key) in cardStyleOptions" :key="key">
-                    <button
-                        x-on:click="selectCardStyle(key)"
-                        :class="currentCardStyle === key
-                            ? 'ring-2 ring-primary-500 bg-primary-50 dark:bg-primary-950/30'
-                            : 'ring-1 ring-gray-200 dark:ring-gray-700 bg-white dark:bg-gray-900 hover:ring-gray-300 dark:hover:ring-gray-600'"
-                        class="relative flex flex-col items-center gap-3 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5"
-                    >
-                        {{-- Card preview --}}
-                        <div class="w-16 h-12 rounded-lg" :class="opt.previewClass" :style="opt.previewStyle"></div>
-                        <span class="text-xs font-medium text-gray-700 dark:text-gray-300" x-text="t.cardStyleLabels[key]"></span>
-                    </button>
-                </template>
-            </div>
-        </div>
-
-        {{-- Divider --}}
-        <div class="border-t border-gray-200 dark:border-gray-700"></div>
-
         {{-- Section: Reset --}}
         <div>
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-1" x-text="t.themeSettings"></h2>
@@ -491,12 +430,6 @@
                 densityDescs: { 'compact': 'Daha az bosluk', 'default': 'Varsayilan aralik', 'comfortable': 'Daha fazla bosluk' },
                 errorLabels: { 'default': 'Varsayilan', 'minimal': 'Minimal', 'illustrated': 'Illustrasyonlu', 'gradient': 'Gradient' },
                 errorDescs: { 'default': 'Laravel varsayilani', 'minimal': 'Sade ve temiz', 'illustrated': 'Canli ve renkli', 'gradient': 'Modern ve etkileyici' },
-                tableStyle: 'Tablo Satir Stili',
-                tableStyleDesc: 'Tablolardaki satirlarin gorunum bicimi',
-                tableStyleLabels: { 'default': 'Varsayilan', 'striped': 'Cizgili', 'bordered': 'Cevrelemeli', 'minimal': 'Minimal' },
-                cardStyle: 'Kart Stili',
-                cardStyleDesc: 'Kartlarin ve section\'larin gorunum bicimi',
-                cardStyleLabels: { 'default': 'Varsayilan', 'flat': 'Duz', 'raised': 'Kabarik', 'bordered': 'Cevrelemeli' },
             },
             en: {
                 themeStyle: 'Theme Style',
@@ -541,12 +474,6 @@
                 densityDescs: { 'compact': 'Less spacing', 'default': 'Default spacing', 'comfortable': 'More spacing' },
                 errorLabels: { 'default': 'Default', 'minimal': 'Minimal', 'illustrated': 'Illustrated', 'gradient': 'Gradient' },
                 errorDescs: { 'default': 'Laravel default', 'minimal': 'Clean and simple', 'illustrated': 'Vivid and colorful', 'gradient': 'Modern and striking' },
-                tableStyle: 'Table Row Style',
-                tableStyleDesc: 'Appearance of table rows',
-                tableStyleLabels: { 'default': 'Default', 'striped': 'Striped', 'bordered': 'Bordered', 'minimal': 'Minimal' },
-                cardStyle: 'Card Style',
-                cardStyleDesc: 'Appearance of cards and sections',
-                cardStyleLabels: { 'default': 'Default', 'flat': 'Flat', 'raised': 'Raised', 'bordered': 'Bordered' },
             }
         };
 
@@ -569,8 +496,6 @@
                 currentFont: localStorage.getItem('filacraft-font') || 'default',
                 currentRadius: localStorage.getItem('filacraft-radius') || 'default',
                 currentDensity: localStorage.getItem('filacraft-density') || 'default',
-                currentTableStyle: localStorage.getItem('filacraft-table-style') || 'default',
-                currentCardStyle: localStorage.getItem('filacraft-card-style') || 'default',
                 currentErrorStyle: (() => {
                     var match = document.cookie.match(/filacraft-error-style=([^;]+)/);
                     return match ? match[1] : 'default';
@@ -635,40 +560,6 @@
                         cardStyle: 'background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.15)',
                         numStyle: 'color:rgba(255,255,255,0.9); font-size:3rem',
                         textStyle: 'color:rgba(255,255,255,0.6)'
-                    },
-                },
-
-                tableStyleOptions: {
-                    'default': {
-                        rowClass: function(i) { return ''; }
-                    },
-                    'striped': {
-                        rowClass: function(i) { return i > 0 && i % 2 === 0 ? 'bg-gray-100/60 dark:bg-gray-800/40 rounded' : ''; }
-                    },
-                    'bordered': {
-                        rowClass: function(i) { return 'border-b border-gray-200 dark:border-gray-700' + (i > 0 ? ' border-x' : ''); }
-                    },
-                    'minimal': {
-                        rowClass: function(i) { return i === 0 ? 'opacity-50' : ''; }
-                    },
-                },
-
-                cardStyleOptions: {
-                    'default': {
-                        previewClass: 'bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700',
-                        previewStyle: ''
-                    },
-                    'flat': {
-                        previewClass: 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
-                        previewStyle: 'box-shadow: none'
-                    },
-                    'raised': {
-                        previewClass: 'bg-white dark:bg-gray-800',
-                        previewStyle: 'box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15)'
-                    },
-                    'bordered': {
-                        previewClass: 'bg-white dark:bg-gray-800',
-                        previewStyle: 'border: 2px solid #d1d5db; box-shadow: none'
                     },
                 },
 
@@ -771,28 +662,6 @@
                 errorPreviewCode: '404',
                 errorPreviewStyle: null,
 
-                selectTableStyle(id) {
-                    this.currentTableStyle = id;
-                    localStorage.setItem('filacraft-table-style', id);
-                    if (id === 'default') {
-                        document.documentElement.removeAttribute('data-table-style');
-                    } else {
-                        document.documentElement.setAttribute('data-table-style', id);
-                    }
-                    this.saveToDb();
-                },
-
-                selectCardStyle(id) {
-                    this.currentCardStyle = id;
-                    localStorage.setItem('filacraft-card-style', id);
-                    if (id === 'default') {
-                        document.documentElement.removeAttribute('data-card-style');
-                    } else {
-                        document.documentElement.setAttribute('data-card-style', id);
-                    }
-                    this.saveToDb();
-                },
-
                 selectErrorStyle(id) {
                     this.currentErrorStyle = id;
                     if (id === 'default') {
@@ -850,8 +719,6 @@
                                 font: self.currentFont,
                                 radius: self.currentRadius,
                                 density: self.currentDensity,
-                                tableStyle: self.currentTableStyle,
-                                cardStyle: self.currentCardStyle,
                                 errorStyle: self.currentErrorStyle,
                                 lang: self.lang,
                             }
@@ -873,8 +740,6 @@
                         if (s.font && s.font !== self.currentFont) { self.selectFont(s.font); changed = true; }
                         if (s.radius && s.radius !== self.currentRadius) { self.selectRadius(s.radius); changed = true; }
                         if (s.density && s.density !== self.currentDensity) { self.selectDensity(s.density); changed = true; }
-                        if (s.tableStyle && s.tableStyle !== self.currentTableStyle) { self.selectTableStyle(s.tableStyle); changed = true; }
-                        if (s.cardStyle && s.cardStyle !== self.currentCardStyle) { self.selectCardStyle(s.cardStyle); changed = true; }
                         if (s.errorStyle && s.errorStyle !== self.currentErrorStyle) { self.selectErrorStyle(s.errorStyle); changed = true; }
                         if (s.lang && s.lang !== self.lang) { self.setLang(s.lang); changed = true; }
                     })
@@ -888,8 +753,6 @@
                     localStorage.removeItem('filacraft-font');
                     localStorage.removeItem('filacraft-radius');
                     localStorage.removeItem('filacraft-density');
-                    localStorage.removeItem('filacraft-table-style');
-                    localStorage.removeItem('filacraft-card-style');
                     localStorage.removeItem('filacraft-lang');
                     document.cookie = 'filacraft-error-style=;path=/;max-age=0';
                     var csrfToken = document.querySelector('meta[name="csrf-token"]');
@@ -917,12 +780,6 @@
                     }
                     if (this.currentDensity && this.currentDensity !== 'default') {
                         document.documentElement.setAttribute('data-density', this.currentDensity);
-                    }
-                    if (this.currentTableStyle && this.currentTableStyle !== 'default') {
-                        document.documentElement.setAttribute('data-table-style', this.currentTableStyle);
-                    }
-                    if (this.currentCardStyle && this.currentCardStyle !== 'default') {
-                        document.documentElement.setAttribute('data-card-style', this.currentCardStyle);
                     }
                     this.loadFromDb();
                 }
