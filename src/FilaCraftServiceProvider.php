@@ -13,13 +13,14 @@ class FilaCraftServiceProvider extends PackageServiceProvider
         $package
             ->name('filacraft')
             ->hasViews()
-            ->discoversMigrations()
             ->hasRoute('web')
             ->hasCommand(InstallCommand::class);
     }
 
     public function packageBooted(): void
     {
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
         $this->publishes([
             $this->package->basePath('/../resources/views/errors') => resource_path('views/errors'),
         ], "{$this->package->shortName()}-error-views");
