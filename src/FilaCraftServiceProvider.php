@@ -13,7 +13,7 @@ class FilaCraftServiceProvider extends PackageServiceProvider
         $package
             ->name('filacraft')
             ->hasViews()
-            ->hasMigration('2026_03_05_100000_create_user_theme_settings_table')
+            ->discoversMigrations()
             ->hasRoute('web')
             ->hasCommand(InstallCommand::class);
     }
