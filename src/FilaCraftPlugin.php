@@ -109,18 +109,6 @@ class FilaCraftPlugin implements Plugin
                             document.documentElement.setAttribute("data-density", density);
                         }
 
-                        /* Table Style */
-                        var tableStyle = localStorage.getItem("filacraft-table-style");
-                        if (tableStyle && tableStyle !== "default") {
-                            document.documentElement.setAttribute("data-table-style", tableStyle);
-                        }
-
-                        /* Card Style */
-                        var cardStyle = localStorage.getItem("filacraft-card-style");
-                        if (cardStyle && cardStyle !== "default") {
-                            document.documentElement.setAttribute("data-card-style", cardStyle);
-                        }
-
                         /* Sync from DB if localStorage is empty */
                         if (!localStorage.getItem("filacraft-theme")) {
                             fetch("/api/theme-settings", { headers: { "Accept": "application/json" } })
@@ -132,8 +120,6 @@ class FilaCraftPlugin implements Plugin
                                     if (s.font) localStorage.setItem("filacraft-font", s.font);
                                     if (s.radius) localStorage.setItem("filacraft-radius", s.radius);
                                     if (s.density) localStorage.setItem("filacraft-density", s.density);
-                                    if (s.tableStyle) localStorage.setItem("filacraft-table-style", s.tableStyle);
-                                    if (s.cardStyle) localStorage.setItem("filacraft-card-style", s.cardStyle);
                                     if (s.lang) localStorage.setItem("filacraft-lang", s.lang);
                                     if (s.errorStyle) document.cookie = "filacraft-error-style=" + s.errorStyle + ";path=/;max-age=31536000";
                                     location.reload();

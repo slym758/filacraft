@@ -2,9 +2,9 @@
 
 namespace Slym758\FilaCraft;
 
+use Slym758\FilaCraft\Console\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Slym758\FilaCraft\Console\InstallCommand;
 
 class FilaCraftServiceProvider extends PackageServiceProvider
 {

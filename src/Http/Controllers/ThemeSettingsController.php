@@ -25,8 +25,6 @@ class ThemeSettingsController extends Controller
             'settings.font' => 'nullable|string|max:50',
             'settings.radius' => 'nullable|string|in:sharp,small,default,large',
             'settings.density' => 'nullable|string|in:compact,default,comfortable',
-            'settings.tableStyle' => 'nullable|string|in:default,striped,bordered,minimal',
-            'settings.cardStyle' => 'nullable|string|in:default,flat,raised,bordered',
             'settings.errorStyle' => 'nullable|string|in:default,minimal,illustrated,gradient',
             'settings.lang' => 'nullable|string|in:tr,en',
         ]);

@@ -52,7 +52,7 @@ class InstallCommand extends Command
             if (preg_match_all('/^use .+?;\n/ms', substr($contents, $insertPos), $uses, \PREG_OFFSET_CAPTURE)) {
                 $lastUse = end($uses[0]);
                 $afterLastUse = $insertPos + $lastUse[1] + strlen($lastUse[0]);
-                $contents = substr($contents, 0, $afterLastUse) . $useStatement . "\n" . substr($contents, $afterLastUse);
+                $contents = substr($contents, 0, $afterLastUse).$useStatement."\n".substr($contents, $afterLastUse);
             }
         }
 
@@ -88,7 +88,7 @@ class InstallCommand extends Command
         }
 
         if (! File::exists($themePath)) {
-            $this->warn('Could not create theme file at: ' . $themePath);
+            $this->warn('Could not create theme file at: '.$themePath);
 
             return;
         }
@@ -119,7 +119,7 @@ class InstallCommand extends Command
             ? "@source '../../../../packages/filacraft/resources/views/**/*';"
             : "@source '../../../../vendor/slym758/filacraft/resources/views/**/*';";
 
-        $newContents = $importLine . "\n" . $sourceLine . "\n" . $contents;
+        $newContents = $importLine."\n".$sourceLine."\n".$contents;
         File::put($themePath, $newContents);
 
         $this->info('FilaCraft CSS import and @source added to theme.css');

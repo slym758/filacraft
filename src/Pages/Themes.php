@@ -8,7 +8,7 @@ use Filament\Support\Icons\Heroicon;
 
 class Themes extends Page
 {
-    protected static string | BackedEnum | null $navigationIcon = Heroicon::OutlinedPaintBrush;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPaintBrush;
 
     protected static ?string $navigationLabel = 'Themes';
 
