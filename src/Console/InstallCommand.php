@@ -16,6 +16,7 @@ class InstallCommand extends Command
         $this->registerPlugin();
         $this->installCss();
         $this->publishErrorViews();
+        $this->publishAssets();
         $this->runMigrations();
 
         $this->newLine();
@@ -133,6 +134,16 @@ class InstallCommand extends Command
         ]);
 
         $this->info('Error page views published.');
+    }
+
+    protected function publishAssets(): void
+    {
+        $this->call('vendor:publish', [
+            '--tag' => 'filacraft-assets',
+            '--force' => true,
+        ]);
+
+        $this->info('Theme preview images published.');
     }
 
     protected function runMigrations(): void

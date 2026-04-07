@@ -103,7 +103,7 @@
                     </div>
                     <div class="px-6 pb-6">
                         <div class="rounded-xl overflow-hidden ring-1 ring-gray-200 dark:ring-gray-700">
-                            <img src="{{ asset('vendor/filacraft/img/kutup_ışığı.png') }}" alt="Kutup Işığı" class="w-full h-auto">
+                            <img src="{{ asset('vendor/filacraft/img/kutup_isigi.png') }}" alt="Kutup Işığı" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="px-6 pb-6">
                         <div class="rounded-xl overflow-hidden ring-1 ring-gray-200 dark:ring-gray-700">
-                            <img src="{{ asset('vendor/filacraft/img/gün_batımı.png') }}" alt="Gün Batımı" class="w-full h-auto">
+                            <img src="{{ asset('vendor/filacraft/img/gun_batimi.png') }}" alt="Gün Batımı" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
