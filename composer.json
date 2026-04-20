@@ -1,13 +1,14 @@
 {
-    "name": "slym758/filacraft",
+    "name": "slym758/filament-filacraft-theme",
     "description": "FilaCraft - A comprehensive Filament panel customization toolkit with theme presets, color palettes, fonts, density, table styles, card styles, and more.",
     "keywords": ["filament", "theme", "customization", "admin-panel", "laravel", "filacraft"],
-    "homepage": "https://github.com/slym758/filacraft",
+    "homepage": "https://github.com/slym758/filament-filacraft-themes",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "slym758",
+            "name": "Süleyman Ardıç",
+            "email": "slym758@gmail.com",
             "homepage": "https://github.com/slym758"
         }
     ],
